@@ -1,0 +1,15 @@
+{
+  "shared": {
+    "currently-unavailable": "Currently Unavailable"
+  },
+  "server-list": {
+    "home-tooltip": "Home",
+    "add-server-tooltip": "Add a Server",
+    "explore-public-servers-tooltip": "Explore Public Servers"
+  },
+  "user-panel": {
+    "mute-microphone": "Mute Microphone",
+    "mute-sound": "Mute Sound",
+    "user-settings": "User Settings"
+  }
+}

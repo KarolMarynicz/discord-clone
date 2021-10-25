@@ -1,14 +1,28 @@
 <div class="user-panel w-100">
   <div></div>
   <div class="buttons">
-    <button class="button" type="button" (click)="this.micButtonClick()" pTooltip="Mute Microphone" tooltipPosition="top">
-      <img class="image" [src]="this.getMicIconUrl()" alt="mic-toggle">
+    <button
+      class="button"
+      type="button"
+      (click)="this.micButtonClick()"
+      pTooltip="{{ 'user-panel.mute-microphone' | translate }}"
+      tooltipPosition="top" >
+        <img class="image" [src]="this.getMicIconUrl()" alt="mic-toggle">
     </button>
-    <button class="button" type="button" (click)="this.soundButtonClick()" pTooltip="Mute Sound" tooltipPosition="top">
-      <img class="image" [src]="this.getSoundIconUrl()" alt="headset-toggle">
+    <button
+      class="button"
+      type="button"
+      (click)="this.soundButtonClick()"
+      pTooltip="{{ 'user-panel.mute-sound' | translate }}"
+      tooltipPosition="top">
+        <img class="image" [src]="this.getSoundIconUrl()" alt="headset-toggle">
     </button>
-    <button class="button" type="button" pTooltip="User Settings" tooltipPosition="top">
-      <i class="pi pi-cog button-icon"></i>
+    <button
+      class="button"
+      type="button"
+      pTooltip="{{ 'user-panel.user-settings' | translate }}"
+      tooltipPosition="top">
+        <i class="pi pi-cog button-icon"></i>
     </button>
   </div>
 </div>

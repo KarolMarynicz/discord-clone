@@ -8,6 +8,7 @@ import { FeaturesListComponent } from './features-list/features-list.component';
 import { UserPanelComponent } from './user-panel/user-panel.component'
 import { ButtonModule } from "primeng/button";
 import { UserPanelShellComponent } from './user-panel-shell/user-panel-shell.component';
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,8 @@ import { UserPanelShellComponent } from './user-panel-shell/user-panel-shell.com
 	imports: [
 		TooltipModule,
 		CommonModule,
-		ButtonModule
+		ButtonModule,
+		TranslateModule
 	],
 })
 export class HomeModule { }
