@@ -1,0 +1,42 @@
+@import "src/utilities/global-variables"
+
+$user-panel-height: 52px
+$user-panel-padding: 8px
+$button-size: 32px
+$button-icon-size: 19px
+$button-image-size: 21px
+
+.user-panel
+  align-items: center
+  background-color: #292b2f
+  color: white
+  display: flex
+  height: $user-panel-height
+  justify-content: space-between
+  padding: $user-panel-padding
+
+.buttons
+  display: flex
+
+.button
+  align-items: center
+  background: none
+  border: none
+  border-radius: 5px
+  color: $base-small-icon-color
+  display: flex
+  height: $button-size
+  justify-content: center
+  width: $button-size
+.button:hover
+  background-color: #35383d
+  cursor: pointer
+
+.button-icon
+  font-size: $button-icon-size
+.button:hover .button-icon
+  color: #dcddde
+
+.image
+  width: $button-image-size
+  height: $button-image-size

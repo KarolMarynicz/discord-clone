@@ -1,0 +1,7 @@
+<app-user-panel *ngIf="this.user$ | async as user"
+  [isMicMuted]="user.isMicMuted"
+  [isSoundMuted]="user.isSoundMuted"
+  (changeMicStateEvent)="this.changeMicState($event)"
+  (changeSoundStateEvent)="this.changeSoundState($event)"
+>
+</app-user-panel>

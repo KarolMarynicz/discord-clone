@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+// primeng imports
+@import "~primeicons/primeicons.css"
+@import '~primeng/resources/themes/bootstrap4-light-blue/theme.css'
+@import '~primeng/resources/primeng.min.css'
+
+// utilities classes
+@import "utilities/global-variables"
+@import "utilities/positioning"
+@import "utilities/sizing"
+
+body
+  margin: 0
+
+// Primeng overrides
+.p-tooltip
+  font-size: $base-tooltip-font-size
+
+.item:hover .icon
+  color: white
+
+.icon
+  color: $base-icon-color
+  transition: $base-transition-time ease-in-out
