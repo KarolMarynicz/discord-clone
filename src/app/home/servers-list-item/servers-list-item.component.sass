@@ -1,4 +1,4 @@
-@import "../../../utilities/global-variables"
+@import "src/utilities/global-variables"
 
 $item-size: 45px
 
@@ -16,3 +16,9 @@ $item-size: 45px
   background-color: $base-icon-color
   border-radius: 35%
   cursor: pointer
+
+.server
+  @extend .item
+.server:hover
+  background-color: $server-hover-color
+

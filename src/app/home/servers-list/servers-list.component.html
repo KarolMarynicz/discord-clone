@@ -1,19 +1,28 @@
 <div class="server-list">
   <app-servers-list-item
-    tooltipText="{{ 'server-list.home-tooltip' | translate }}">
+    tooltipText="{{ 'server-list.home-tooltip' | translate }}"
+    [isServer]="true">
+    <i class="pi pi-home home-item"></i>
   </app-servers-list-item>
   <hr class="separator">
+  <app-servers-list-item *ngFor="let server of servers"
+    tooltipText="{{ server.name }}"
+    [isServer]="true">
+  </app-servers-list-item>
   <app-servers-list-item
-    tooltipText="{{ 'server-list.add-server-tooltip' | translate }}">
+    tooltipText="{{ 'server-list.add-server-tooltip' | translate }}"
+    [isServer]="false">
     <i class="pi pi-plus icon"></i>
   </app-servers-list-item>
   <app-servers-list-item
-    tooltipText="{{ 'server-list.explore-public-servers-tooltip' | translate }}">
+    tooltipText="{{ 'server-list.explore-public-servers-tooltip' | translate }}"
+    [isServer]="false">
     <i class="pi pi-compass icon"></i>
   </app-servers-list-item>
   <hr class="separator">
   <app-servers-list-item
-    tooltipText="{{ 'shared.currently-unavailable' | translate }}">
+    tooltipText="{{ 'shared.currently-unavailable' | translate }}"
+    [isServer]="false">
     <i class="pi pi-download icon"></i>
   </app-servers-list-item>
 </div>

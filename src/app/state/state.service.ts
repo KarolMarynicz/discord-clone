@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { StateBase } from "src/app/state/state-base";
-import { GlobalState, User } from "src/app/state/service.model";
+import { GlobalState, User } from "src/models/service.model";
 import { Observable } from "rxjs";
+import { Status } from "src/models/status.enum";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class StateService extends StateBase<GlobalState> {
 
   constructor() {
     super( {
-      user: { isMicMuted: false, isSoundMuted: false }
+      user: { isMicMuted: false, isSoundMuted: false, status: Status.Offline }
     } as GlobalState )
   }
 

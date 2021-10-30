@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ServersListItemComponent {
   @Input() backgroundColor: string = "";
   @Input() tooltipText: string = "";
+  @Input() isServer: boolean = false;
 
   constructor() { }
 }

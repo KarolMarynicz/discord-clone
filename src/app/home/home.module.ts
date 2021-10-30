@@ -9,6 +9,8 @@ import { UserPanelComponent } from './user-panel/user-panel.component'
 import { ButtonModule } from "primeng/button";
 import { UserPanelShellComponent } from './user-panel-shell/user-panel-shell.component';
 import { TranslateModule } from "@ngx-translate/core";
+import { SharedModule } from "src/app/shared/shared.module";
+import { ServersListShellComponent } from './servers-list-shell/servers-list-shell.component';
 
 @NgModule({
 	declarations: [
@@ -18,12 +20,14 @@ import { TranslateModule } from "@ngx-translate/core";
     FeaturesListComponent,
     UserPanelComponent,
     UserPanelShellComponent,
+    ServersListShellComponent,
   ],
 	imports: [
 		TooltipModule,
 		CommonModule,
 		ButtonModule,
-		TranslateModule
+		TranslateModule,
+    SharedModule
 	],
 })
 export class HomeModule { }

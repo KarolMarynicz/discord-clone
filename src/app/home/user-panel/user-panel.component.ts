@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-panel',
   templateUrl: './user-panel.component.html',
-  styleUrls: ['./user-panel.component.sass']
+  styleUrls: ['./user-panel.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserPanelComponent {
   @Input() isMicMuted: boolean = false;
