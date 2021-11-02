@@ -9,6 +9,7 @@ export class ServersListItemComponent {
   @Input() backgroundColor: string = "";
   @Input() tooltipText: string = "";
   @Input() isServer: boolean = false;
+  @Input() isActive: boolean = false;
 
   constructor() { }
 }

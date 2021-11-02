@@ -1,13 +1,19 @@
 <div class="server-list">
   <app-servers-list-item
     tooltipText="{{ 'server-list.home-tooltip' | translate }}"
-    [isServer]="true">
+    [isServer]="true"
+    [isActive]="this.isSelected('me')"
+    [routerLink]="['/channels/me']"
+    (click)="this.onClick('me')">
     <i class="pi pi-home home-item"></i>
   </app-servers-list-item>
   <hr class="separator">
   <app-servers-list-item *ngFor="let server of servers"
     tooltipText="{{ server.name }}"
-    [isServer]="true">
+    [isServer]="true"
+    [isActive]="this.isSelected(server.id)"
+    [routerLink]="['/channels/' + server.id]"
+    (click)="this.onClick(server.id)">
   </app-servers-list-item>
   <app-servers-list-item
     tooltipText="{{ 'server-list.add-server-tooltip' | translate }}"

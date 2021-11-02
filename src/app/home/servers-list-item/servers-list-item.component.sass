@@ -1,6 +1,12 @@
 @import "src/utilities/global-variables"
+@import "src/styles"
 
 $item-size: 45px
+$item-border-radius: 35%
+
+.active
+  background-color: $server-hover-color !important
+  border-radius: $item-border-radius !important
 
 .item
   align-items: center
@@ -14,11 +20,10 @@ $item-size: 45px
   width: $item-size
 .item:hover
   background-color: $base-icon-color
-  border-radius: 35%
+  border-radius: $item-border-radius
   cursor: pointer
 
 .server
   @extend .item
 .server:hover
   background-color: $server-hover-color
-

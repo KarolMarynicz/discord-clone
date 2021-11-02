@@ -1,3 +1,6 @@
-<div [ngClass]="this.isServer ? 'server' : 'item'" [pTooltip]="this.tooltipText">
+<div
+  [class]="this.isServer ? 'server' : 'item'"
+  [ngClass]="this.isActive ? 'active' : ''"
+  [pTooltip]="this.tooltipText">
   <ng-content></ng-content>
 </div>

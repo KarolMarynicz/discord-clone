@@ -10,5 +10,13 @@ import { ServerModel } from "src/models/server.model";
 export class ServersListComponent {
   @Input() servers: Array<ServerModel> = [];
 
-  constructor() { }
+  private selectedChannel: string = 'me';
+
+  public onClick(channelId: string): void {
+    this.selectedChannel = channelId;
+  }
+
+  public isSelected(channelId: string): boolean {
+    return this.selectedChannel === channelId;
+  }
 }

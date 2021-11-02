@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from "@angular/router";
 import { HomeComponent } from "src/app/home/home.component";
 import { ServersListComponent } from "src/app/home/servers-list/servers-list.component";
 import { ServersListItemComponent } from './servers-list-item/servers-list-item.component';
@@ -27,7 +28,8 @@ import { ServersListShellComponent } from './servers-list-shell/servers-list-she
 		CommonModule,
 		ButtonModule,
 		TranslateModule,
-    SharedModule
+    SharedModule,
+    RouterModule
 	],
 })
 export class HomeModule { }
