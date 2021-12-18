@@ -1,4 +1,11 @@
 {
+  "home-channel": {
+    "conversations-button-text": "Find or start conversation",
+    "friends-button-text": "Friends",
+    "nitro-button-text": "Nitro",
+    "direct-messages-text": "Direct Messages",
+    "create-dm-tooltip": "Create DM"
+  },
   "shared": {
     "currently-unavailable": "Currently Unavailable"
   },
@@ -11,5 +18,8 @@
     "mute-microphone": "Mute Microphone",
     "mute-sound": "Mute Sound",
     "user-settings": "User Settings"
+  },
+  "landing-page": {
+    "login-button-text": "Login"
   }
 }

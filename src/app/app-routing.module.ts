@@ -18,8 +18,7 @@ const routes: Routes = [
   },
   {
     path: "channels/:id",
-    component: HomeComponent,
-    children: homeChildrenRoutes
+    component: HomeComponent
   },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/landing', pathMatch: 'full' },

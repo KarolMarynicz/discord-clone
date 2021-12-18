@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { ServersService } from "src/api/servers.service";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from "rxjs";
 import { ServerModel } from "src/models/server.model";
+import { StateService } from "src/app/state/state.service";
+import { StateSelectedSelector } from "src/models/service.model";
 
 @Component({
   selector: 'app-servers-list-shell',
   templateUrl: './servers-list-shell.component.html',
-  styleUrls: ['./servers-list-shell.component.sass']
+  styleUrls: ['./servers-list-shell.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ServersListShellComponent implements OnInit {
-  constructor(private servers: ServersService) { }
+export class ServersListShellComponent {
+  constructor(private state: StateService) { }
 
-  // @ts-ignore
-  public servers$: Observable<Array<ServerModel>>;
+  public get servers(): Observable<Array<ServerModel>> {
+    return this.state.servers$;
+  }
+  public get selectedServer(): Observable<ServerModel | undefined> {
+    return this.state.selectedServer$;
+  }
 
-  public ngOnInit(): void {
-    this.servers$ = this.servers.getAll();
+  public selectServer(serverId: string): void {
+    this.state.selectItem(serverId, StateSelectedSelector.selectedServer);
   }
 }

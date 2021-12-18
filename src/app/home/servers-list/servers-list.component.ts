@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ServerModel } from "src/models/server.model";
 
 @Component({
@@ -9,14 +9,14 @@ import { ServerModel } from "src/models/server.model";
 })
 export class ServersListComponent {
   @Input() servers: Array<ServerModel> = [];
-
-  private selectedChannel: string = 'me';
+  @Input() selectedServer: ServerModel | undefined | null;
+  @Output() selectServerEvent = new EventEmitter<string>();
 
   public onClick(channelId: string): void {
-    this.selectedChannel = channelId;
+    this.selectServerEvent.emit(channelId);
   }
 
   public isSelected(channelId: string): boolean {
-    return this.selectedChannel === channelId;
+    return this.selectedServer?.id === channelId;
   }
 }

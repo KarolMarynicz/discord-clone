@@ -12,6 +12,9 @@ import { UserPanelShellComponent } from './user-panel-shell/user-panel-shell.com
 import { TranslateModule } from "@ngx-translate/core";
 import { SharedModule } from "src/app/shared/shared.module";
 import { ServersListShellComponent } from './servers-list-shell/servers-list-shell.component';
+import { MenuModule } from "primeng/menu";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ChannelsModule } from "src/app/channels/channels.module";
 
 @NgModule({
 	declarations: [
@@ -28,8 +31,11 @@ import { ServersListShellComponent } from './servers-list-shell/servers-list-she
 		CommonModule,
 		ButtonModule,
 		TranslateModule,
-    SharedModule,
-    RouterModule
+		SharedModule,
+		RouterModule,
+		MenuModule,
+		BrowserAnimationsModule,
+		ChannelsModule
 	],
 })
 export class HomeModule { }

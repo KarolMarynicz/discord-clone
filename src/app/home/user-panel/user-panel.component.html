@@ -1,6 +1,10 @@
 <div class="user-panel w-100">
-  <div>
-    <app-user-profile-icon-shell></app-user-profile-icon-shell>
+  <div class="user-info">
+    <p-menu #menu [popup]="true" [model]="this.menuItems"></p-menu>
+    <app-user-profile-icon-shell (click)="menu.toggle($event)"></app-user-profile-icon-shell>
+    <div class="user-name-container">
+      {{ this.userName }}
+    </div>
   </div>
   <div class="buttons">
     <button
@@ -8,7 +12,7 @@
       type="button"
       (click)="this.micButtonClick()"
       pTooltip="{{ 'user-panel.mute-microphone' | translate }}"
-      tooltipPosition="top" >
+      tooltipPosition="top">
         <img class="image" [src]="this.getMicIconUrl()" alt="mic-toggle">
     </button>
     <button

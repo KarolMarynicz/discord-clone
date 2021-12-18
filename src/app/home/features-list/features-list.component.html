@@ -1,3 +1,7 @@
 <div class="features-list">
   <app-user-panel-shell class="align-end w-100"></app-user-panel-shell>
+  <div class="fill-free-space">
+    <app-home-channel *ngIf="isHomeSelected"></app-home-channel>
+    <app-custom-channel *ngIf="!isHomeSelected"></app-custom-channel>
+  </div>
 </div>

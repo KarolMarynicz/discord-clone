@@ -9,7 +9,7 @@
   </app-servers-list-item>
   <hr class="separator">
   <app-servers-list-item *ngFor="let server of servers"
-    tooltipText="{{ server.name }}"
+    tooltipText="{{ server.channel.name }}"
     [isServer]="true"
     [isActive]="this.isSelected(server.id)"
     [routerLink]="['/channels/' + server.id]"

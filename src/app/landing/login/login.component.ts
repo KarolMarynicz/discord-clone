@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from "@angular/router";
+import { UsersService } from "src/api/users.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  styleUrls: ['./login.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  constructor(private router: Router,
+              private usersService: UsersService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public login(): void {
+    this.usersService.loadUserById(1).then();
+    this.router.navigate(['/channels/me']).then();
   }
-
 }

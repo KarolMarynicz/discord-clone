@@ -8,12 +8,35 @@
 @import "utilities/positioning"
 @import "utilities/sizing"
 
-body
+// font import
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+body, html
+  font-family: "Roboto", serif
   margin: 0
 
 // Primeng overrides
+// tooltip
 .p-tooltip
   font-size: $base-tooltip-font-size
+// dropdown
+.p-menu.p-menu-overlay
+  background-color: $base-color-dark
+.p-menuitem-link:hover
+  background-color: $server-hover-color !important
+.p-menuitem-text
+  color: $text-secondary !important
+  font-size: $dropdown-text-size
+.p-menuitem-text:hover
+  color: $text-secondary !important
+.p-menuitem-icon
+  font-size: $dropdown-icon-size
+  color: $text-secondary !important
+.p-menu-separator
+  border-color: hsla(0,0%,100%,0.06) !important
+  margin-left: auto !important
+  margin-right: auto !important
+  width: 90%
 
 .item:hover .icon
   color: white

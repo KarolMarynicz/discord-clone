@@ -1,11 +1,16 @@
-import { Status } from "src/models/status.enum";
+import { UserModel } from "src/models/user.model";
+import { ServerModel } from "src/models/server.model";
 
 export interface GlobalState {
-  user: User
+  user: UserModel,
+  [StateSelector.servers]: Array<ServerModel>,
+  [StateSelectedSelector.selectedServer]: string
 }
 
-export interface User {
-  isMicMuted: boolean,
-  isSoundMuted: boolean,
-  status: Status;
+export enum StateSelector {
+  servers = 'servers'
+}
+
+export enum StateSelectedSelector {
+  selectedServer = 'selectedServers'
 }

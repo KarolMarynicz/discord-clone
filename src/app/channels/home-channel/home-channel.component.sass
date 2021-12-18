@@ -1,0 +1,81 @@
+@import "src/utilities/global-variables"
+
+$func-buttons-container-margin: 8px
+
+$button-height: 28px
+$button-width: 220px
+$func-button-height: 42px
+$func-button-width: 224px
+
+$button-radius: 4px
+$button-font-size: 16px
+$button-icon-size: 24px
+$button-icon-margin: 12px
+
+$direct-messages-margin: 18px
+$direct-messages-font-size: 12px
+$direct-messages-icon-size: 12px
+
+$button-text-color: #72767d
+
+.search-box
+  align-items: center
+  border-bottom: $upper-panel-border-size solid $upper-panel-border-color
+  display: flex
+  height: $upper-panel-size
+  justify-content: center
+
+.search-button
+  background: $base-color-dark
+  border: none
+  border-radius: $button-radius
+  color: $button-text-color
+  cursor: pointer
+  display: block
+  height: $button-height
+  outline: none
+  padding: 0
+  width: $button-width
+
+.func-buttons
+  align-items: center
+  display: flex
+  flex-direction: column
+  margin-top: $func-buttons-container-margin
+
+.func-button
+  align-items: center
+  background: transparent
+  border: none
+  border-radius: $button-radius
+  color: $button-text-color
+  display: flex
+  font-size: $button-font-size
+  height: $func-button-height
+  width: $func-button-width
+.func-button:hover
+  background: #393c42
+  cursor: pointer
+
+.button-icon
+  font-size: $button-icon-size
+  margin-right: $button-icon-margin
+
+.direct-messages-container
+  align-items: center
+  display: flex
+  flex-direction: column
+  margin-top: $direct-messages-margin
+
+.direct-messages-title-bar
+  color: $button-text-color
+  display: flex
+  font-size: $direct-messages-font-size
+  font-weight: bolder
+  justify-content: space-between
+  width: $button-width
+
+.direct-messages-title-bar-icon
+  font-size: $direct-messages-icon-size
+.direct-messages-title-bar-icon:hover
+  cursor: pointer

@@ -1,5 +1,6 @@
 import { BehaviorSubject, Observable } from "rxjs";
 import { map, distinctUntilChanged } from "rxjs/operators";
+import { Error } from "src/models/error.model";
 
 export class StateBase<T> {
   private state$: BehaviorSubject<T>;
@@ -21,24 +22,24 @@ export class StateBase<T> {
     this.isLoading$.next(loading);
   }
 
-  private isError$: BehaviorSubject<boolean>;
+  private isError$: BehaviorSubject<Error>;
   /**
    * Get information about any errors of any http request.
    * */
-  public get isError(): boolean {
+  public get isError(): Error {
     return this.isError$.getValue();
   }
   /**
    * Set error state of any http request.
    * */
-  public set isError(error: boolean) {
+  public set isError(error: Error) {
     this.isError$.next(error);
   }
 
   constructor(initialState: T) {
     this.state$ = new BehaviorSubject<T>(initialState);
     this.isLoading$ = new BehaviorSubject<boolean>(false);
-    this.isError$ = new BehaviorSubject<boolean>(false);
+    this.isError$ = new BehaviorSubject<Error>({ isOccurred: false, message: "" });
   }
 
   protected select<K>(mapFunc: (state: T) => K): Observable<K> {

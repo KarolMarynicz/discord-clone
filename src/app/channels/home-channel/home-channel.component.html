@@ -1,0 +1,26 @@
+<div>
+  <div class="search-box">
+    <button class="search-button">{{ "home-channel.conversations-button-text" | translate }}</button>
+  </div>
+  <div class="func-buttons">
+    <button class="func-button">
+      <i class="pi pi-users button-icon"></i>
+      <span>{{ "home-channel.friends-button-text" | translate }}</span>
+    </button>
+    <button class="func-button">
+      <i class="pi pi-bolt button-icon"></i>
+      <span>{{ "home-channel.nitro-button-text" | translate }}</span>
+    </button>
+  </div>
+  <div class="direct-messages-container">
+    <div class="direct-messages-title-bar">
+      <span>{{ "home-channel.direct-messages-text" | translate | uppercase }}</span>
+      <i
+        class="pi pi-plus direct-messages-title-bar-icon"
+        [pTooltip]="'home-channel.create-dm-tooltip' | translate"
+        [tooltipPosition]="'top'"
+      ></i>
+    </div>
+    <div></div>
+  </div>
+</div>

@@ -1,7 +1,8 @@
-<div class="home">
+<app-loading *ngIf="isLoading"></app-loading>
+<div *ngIf="!isLoading" class="home">
   <app-servers-list-shell></app-servers-list-shell>
-  <app-features-list></app-features-list>
+  <app-features-list
+    [selectedChannel]="selectedChannel | async" >
+  </app-features-list>
   <p>home works!</p>
 </div>
-
-

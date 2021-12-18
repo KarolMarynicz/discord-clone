@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { StateService } from "src/app/state/state.service";
-import { User } from "src/models/service.model";
-
+import { UserModel } from "src/models/user.model";
+import { Status } from "src/models/status.enum";
 
 @Component({
   selector: 'app-user-panel-shell',
@@ -11,7 +11,7 @@ import { User } from "src/models/service.model";
 })
 export class UserPanelShellComponent implements OnInit {
   // @ts-ignore
-  public user$: Observable<User>;
+  public user$: Observable<UserModel>;
 
   constructor(private state: StateService) { }
 
@@ -20,10 +20,14 @@ export class UserPanelShellComponent implements OnInit {
   }
 
   public changeMicState(micState: boolean): void {
-    this.state.changeUserSettings({ isMicMuted: micState });
+    this.state.changeUserSettings( { user: { isMicMuted: micState } } as Partial<UserModel>);
   }
 
   public changeSoundState(soundState: boolean): void {
-    this.state.changeUserSettings({ isSoundMuted: soundState });
+    this.state.changeUserSettings( { user: { isSoundMuted: soundState } } as Partial<UserModel>);
+  }
+
+  public changeUserStatusState(status: Status): void {
+    this.state.changeUserSettings( { user: { status: status } } as Partial<UserModel>);
   }
 }

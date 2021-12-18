@@ -1,7 +1,8 @@
 @import "src/utilities/global-variables"
 
 $user-profile-icon-size: 32px
-$inner-icon-size: 22px
+$user-profile-icon-status-size: 12px
+$inner-icon-size: 9px
 
 .user-profile-icon
   align-items: center
@@ -10,11 +11,22 @@ $inner-icon-size: 22px
   display: flex
   height: $user-profile-icon-size
   justify-content: center
+  position: relative
   width: $user-profile-icon-size
 .user-profile-icon:hover
   cursor: pointer
 
 .inner-icon
-  height: $inner-icon-size
-  width: $inner-icon-size
+  font-size: $inner-icon-size
 
+.user-profile-icon-status
+  align-items: center
+  background: $base-color-dark
+  border-radius: 50%
+  bottom: -1px
+  display: flex
+  height: $user-profile-icon-status-size
+  justify-content: center
+  position: absolute
+  right: -1px
+  width: $user-profile-icon-status-size
